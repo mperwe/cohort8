@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Basics</title>
+  <!-- Linking the external CSS file for styling -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Heading of the page -->
+  <h2>Student Info Viewer</h2>
+
+  <!-- Button that triggers the JavaScript function when clicked -->
+  <button onclick="showStudents()">Show Students</button>
+
+  <!-- This div will display the student information -->
+  <div id="output"></div>
+
+  <script>
+    // Step 1: Create an array of student objects
+    // Each object contains the name, age, and grade of a student
+    const students = [
+      { name: "Alice", age: 18, grade: 85 },
+      { name: "Bob", age: 19, grade: 72 },
+      { name: "Clara", age: 17, grade: 90 }
+    ];
+
+    //  Step 2: Define the function that runs when the button is clicked
+    function showStudents() {
+      let result = ""; // This will store the HTML output to display
+
+      // Step 3: Use a loop to go through each student in the array
+      for (let i = 0; i < students.length; i++) {
+        const student = students[i]; // Get the current student object
+
+        // Step 4: Use a conditional operator (?:) to decide pass/fail based on grade
+        // If grade is 80 or more, status is "Passed", otherwise "Try Again"
+        let status = student.grade >= 80 ? "Passed" : "Try Again";
+
+        //  Step 5: Add the student details and status to the result variable
+        result += "Name: " + student.name + "<br>";    // Show name
+        result += "Age: " + student.age + "<br>";      // Show age
+        result += "Grade: " + student.grade + "<br>";  // Show grade
+        result += "Status: " + status + "<hr>";        // Show pass/fail and add a separator
+      }
+
+      // Step 6: Display the result inside the <div> with id="output"
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+
+</body>
+</html>
