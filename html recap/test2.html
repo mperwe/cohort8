@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <title>Simple Task Manager</title> 
+  <link rel="stylesheet" href=""> 
+</head>
+<body>
+
+  <h2>Task Manager</h2> <!-- Heading for the app -->
+
+  <!-- Wrapper box for the todo app -->
+  <div class="todo-container">
+    <input type="text" id="taskInput" placeholder="Enter a task"> 
+    <button onclick="addTask()">Add Task</button> 
+    <ul id="taskList"></ul> 
+  </div>
+
+  <script>
+    // Function to add a task to the list
+    function addTask() {
+      // Get the value entered in the input field
+      const task = document.getElementById("taskInput").value;
+
+      // Check if the input is empty
+      if (task === "") {
+        alert("Please enter a task"); // Show alert if no task is entered
+        return; 
+      }
+
+      // Create a new list item element
+      const li = document.createElement("li");
+
+      
+      li.textContent = task;
+
+      // Append the list item to the task list
+      document.getElementById("taskList").appendChild(li);
+
+      // Clear the input field after adding the task
+      document.getElementById("taskInput").value = "";
+    }
+  </script>
+
+</body>
+</html>

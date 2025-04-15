@@ -1,0 +1,77 @@
+/* General page styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page title */
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Task Manager box */
+.todo-container {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+/* Input field */
+#taskInput {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Add Task button */
+button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Task list */
+#taskList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Each task item */
+#taskList li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+#taskList li:hover {
+  background-color: #f1f1f1;
+}

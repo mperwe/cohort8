@@ -2,50 +2,50 @@
 <html>
 <head>
   <title>JavaScript Basics</title>
-          <!-- link to our css file -->
-    <link rel="stylesheet" href ="styles.css">
- 
+  
+  <!-- Link to external CSS file for styling -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Heading of the page -->
+  <!-- Heading of the web page -->
   <h2>Student Info Viewer</h2>
 
-  <!-- Button that triggers the JavaScript function when clicked -->
+  <!-- Button that, when clicked, runs the showStudents() JavaScript function -->
   <button onclick="showStudents()">Show Students</button>
 
-  <!-- This div will display the student information -->
+  <!-- This div will be used to display the list of students and their information -->
   <div id="output"></div>
 
   <script>
-    // Step 1: Create an array of student objects
-    // Each object contains the name, age, and grade of a student
+    // Step 1: Define an array of student objects
+    // Each object contains the student's name, age, and grade
     const students = [
       { name: "Student 1", age: 18, grade: 85 },
       { name: "Student 2", age: 19, grade: 72 },
       { name: "Student 3", age: 17, grade: 90 }
     ];
 
-    //  Step 2: Define the function that runs when the button is clicked
+    // Step 2: This function is called when the button is clicked
     function showStudents() {
-      let result = ""; // This will store the HTML output to display
+      let result = ""; // Variable to build the HTML string that will be displayed in the page
 
-      // Step 3: Use a loop to go through each student in the array
+      // Step 3: Loop through the array of students
       for (let i = 0; i < students.length; i++) {
-        const student = students[i]; // Get the current student object
+        const student = students[i]; // Get the current student from the array
 
-        // Step 4: Use a conditional operator (?:) to decide pass/fail based on grade
-        // If grade is 80 or more, status is "Passed", otherwise "Try Again"
+        // Step 4: Check if the student passed or not using a conditional (ternary) operator
+        // If grade >= 80, student passes; otherwise, they need to try again
         let status = student.grade >= 80 ? "Passed" : "Try Again";
 
-        //  Step 5: Add the student details and status to the result variable
-        result += "Name: " + student.name + "<br>";    // Show name
-        result += "Age: " + student.age + "<br>";      // Show age
-        result += "Grade: " + student.grade + "<br>";  // Show grade
-        result += "Status: " + status + "<hr>";        // Show pass/fail and add a separator
+        // Step 5: Add the student details and their pass/fail status to the result string
+        result += "Name: " + student.name + "<br>";    // Add student's name
+        result += "Age: " + student.age + "<br>";      // Add student's age
+        result += "Grade: " + student.grade + "<br>";  // Add student's grade
+        result += "Status: " + status + "<hr>";        // Show if student passed or not, with a line to separate students
       }
 
-      // Step 6: Display the result inside the <div> with id="output"
+      // Step 6: Display the result inside the 'output' div on the web page
       document.getElementById("output").innerHTML = result;
     }
   </script>
