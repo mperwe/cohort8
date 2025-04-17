@@ -1,77 +1,101 @@
-/* General page styling */
+/* Apply a clean background and center everything horizontally */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
   margin: 0;
-  padding: 40px;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;     /* Center horizontally */
 }
 
-/* Page title */
+/* Title styling */
 h2 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Task Manager box */
-.todo-container {
-  background-color: #ffffff;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  width: 350px;
+  margin: 30px 0 10px; /* Top and bottom spacing */
   text-align: center;
+  color: #333;
 }
 
-/* Input field */
-#taskInput {
-  width: 70%;
+/* Main task box */
+.todo-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+/* Input + Button style */
+input[type="text"] {
+  width: calc(100% - 100px);
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-right: 10px;
 }
 
-/* Add Task button */
 button {
   padding: 10px 15px;
-  background-color: #4caf50;
+  font-size: 14px;
+  background-color: #021631;
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-left: 10px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #0056b3;
 }
 
 /* Task list */
-#taskList {
-  list-style-type: none;
-  padding: 0;
+ul {
+  list-style: none;
+  padding-left: 0;
   margin-top: 20px;
-  width: 100%;
 }
 
-/* Each task item */
-#taskList li {
-  background-color: #f9f9f9;
+/* Each task */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafc;
+  padding: 10px;
   border: 1px solid #ddd;
-  padding: 12px 15px;
+  border-radius: 8px;
   margin-bottom: 10px;
-  border-radius: 6px;
-  text-align: left;
-  transition: background-color 0.3s ease;
 }
 
-#taskList li:hover {
-  background-color: #f1f1f1;
+.task-text {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 16px;
 }
+
+
+/* Edit and Delete Buttons */
+
+li button {
+ margin-left: 5px;
+ background-color: #333;
+
+}
+
+li button:first-of-type {
+  background-color: rgb(50, 79, 244);
+}
+
+li button:last-of-type {
+  background-color: rgb(234, 43, 85);
+}
+ 
+li button:hover {
+  opacity: 0.9;
+}
+
+
