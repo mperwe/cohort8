@@ -1,0 +1,11 @@
+#myDiv {
+    padding: 20px;
+    background-color: lightblue;
+    font-size: 18px;
+    transition: all 0.3s ease;
+  }
+  
+  .highlight {
+    background-color: yellow;
+  }
+  

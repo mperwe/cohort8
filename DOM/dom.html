@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Basics</title>
+  <!-- Linking the external CSS file for styling -->
+  <link rel="stylesheet" href="dom.css">
+</head>
+<body>
+
+<div class="container">
+<h2 id="title"> Welcome to DOM Magic </h2>
+
+<!-- Box to be manipulated -->
+<div id="myDiv" class="box"> This is our Box</div>
+
+<!-- 3 buttons, changes text, style, toggle -->
+<div class="button-group">
+<button onclick="changeText()">Change Text</button>
+<button onclick="changeStyle()">Change Style</button>
+<button onclick="toggleHighlight()">Toggle Highlight</button>
+
+</div>
+
+<script>
+ // change the box content
+
+ function changeText() {
+    const div = document.getElementById("myDiv");
+    div.textContent = "text changed!";
+ }
+
+  // change inline styles of the box
+  function changeStyle() {
+    const div = document.getElementById("myDiv");
+    div.style.backgroundColor = "blue";
+    div.style.color = "red";
+    div.style.borderRadius = "12px";
+    div.style.transform = "scale(1.05)";
+
+ }
+// Toggle Class
+
+function toggleHighlight() {
+    const div = document.getElementById("myDiv");
+    div.classList.toggle = "highlight";
+}
+
+
+</script>
+
+</body> 
+</html>   
