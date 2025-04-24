@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple API Example</title>
+</head>
+<body>
+  <h1>Enter Your Name:</h1>
+  <input type="text" id="nameInput" placeholder="Your Name">
+  <button id="saveBtn">Save Name</button>
+
+  <p id="greeting"></p> <!-- Where the stored name will be displayed -->
+
+  <script>
+    // Show stored name if it exists
+    window.onload = function() {
+      var storedName = localStorage.getItem('userName');
+      if (storedName) {
+        document.getElementById('greeting').textContent = 'Welcome back, ' + storedName + '!'; // Display name
+      }
+    };
+
+    // When button is clicked, save name and show notification
+    document.getElementById('saveBtn').onclick = function() {
+      var name = document.getElementById('nameInput').value; // Get the name from input
+      localStorage.setItem('userName', name); // Save name in localStorage
+
+      // Show notification
+      if (Notification.permission === 'granted') {
+        new Notification('Hello, ' + name + '!'); // Display notification
+      } else {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            new Notification('Hello, ' + name + '!'); // Display notification if granted
+          }
+        });
+      }
+
+      // Update greeting
+      document.getElementById('greeting').textContent = 'Hello, ' + name + '!'; // Show name on page
+    };
+  </script>
+</body>
+</html>
